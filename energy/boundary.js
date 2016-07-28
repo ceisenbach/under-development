@@ -1,6 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
 
 // A fixed boundary class
 
