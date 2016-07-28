@@ -109,7 +109,7 @@ function calcSlope(){
   //x2= constrain(0,100-dm);
   y1 = height/2 + Math.sin(x1)*amplitude;
   y2 = height/2 + Math.sin(x2)*amplitude;
-  m = ((y1-y2)/(dm*2))*amplitude;
+  m = ((y1-y2)/(x1-x2))*amplitude;
 
   var x = -(dx/2)*points;
   for(var i = 0; i < mValues.length; i++ ){
