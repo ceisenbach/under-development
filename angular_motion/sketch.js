@@ -1,4 +1,4 @@
-var r = 150
+var r = 160
 var angle;
 var aVel = 0.0;
 var aAcc;// = .0001;
