@@ -37,7 +37,8 @@
 ###Rise-O-Run:
 * A sim that allows the user to create a linear function.
 
-###Energy: _has not been posted yet_
+###Energy:
+[check it out](https://ceisenbach.github.io/under-development/energy/).
 * A sim using the [box2d phyics engine - js port](https://github.com/kripken/box2d.js/).
 * It's meant as an illustration of stable and unstaple equilibrium on an energy graph
 * As you can most probably see that it has a lot of potential for expansion into other phyics concepts.
