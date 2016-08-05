@@ -47,6 +47,8 @@
  * incorporate tilt-event ```rotationX``` 
  * cooler looking -\'_'/-
 
-
+###Circle - Radians:
+ * Based on one of the gifs posted [here](https://en.wikipedia.org/wiki/User:LucasVB/Gallery)
+ * in progress.
 
 
