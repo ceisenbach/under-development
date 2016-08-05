@@ -4,6 +4,7 @@ var angle;
 var aVel;
 
 
+
 function setup(){
   createCanvas(640,360);
   angle = 0;
@@ -25,20 +26,28 @@ function draw(){
     ellipse(0,0,7,7)
     ellipse(x,y,7,7);
     stroke(0,50,255);
-    noFill();
+
+    //noFill();
     //so we draw the circle only once
-    arc(0,0,d,d,0,angle);
+    arc(0,0,d,d,angle,0);
+    //if(angle <)
     strokeWeight(2);
+    fill(0,100,100);
     stroke(0,100,100);
-    arc(0,0,d,d,r,0);
-    //stroke(200,0,200);
-    //arc(0,0,d,d,2*r,r);
-    //stroke(200,200,200);
-    //arc(0,0,d,d,3*r,r);
-    //stroke(0);
-    //arc(0,0,d,d,PI,r);
+    arc(0,0,d,d,TWO_PI-1,0);
+    fill(200,0,200);
+    stroke(200,0,200);
+    arc(0,0,d,d,TWO_PI-2,TWO_PI-1);
+    fill(200,200,200);
+    stroke(200,200,200);
+    arc(0,0,d,d,TWO_PI-3,TWO_PI-2);
+    fill(0);
+    stroke(0);
+    strokeWeight(3);
+    arc(0,0,d,d,PI,TWO_PI-3);
     //ellipse(x,y,5,5);
-    angle += aVel
+    angle -= aVel;
+    //constrain(angle,-TWO_PI,0);
   //}
   //else {
   //  stroke(0,50,255);
