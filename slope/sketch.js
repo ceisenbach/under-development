@@ -59,7 +59,7 @@ stroke(0);
 strokeWeight(2);
 //line(x1,y1,x2,y2);
 noStroke();
-r= mouseX;
+r = mouseX;
 r = map(mouseX,0,width, 0,dx*yValues.length);
 var w = Math.sin(r)*amplitude ;
 fill(200,100,0,100);
@@ -100,20 +100,21 @@ function renderWave(){
   pop();
 }
 function calcSlope(){
-  x1 = (mouseX+dm);
-  x2 = (mouseX-dm);
+  //x1 = (mouseX+dm);
+  //x2 = (mouseX-dm);
   x1 = map(mouseX+dm,0,width, 0,dx*yValues.length);//attempt to do something similar to line 63
   x2 = map(mouseX-dm,0,width, 0,dx*yValues.length);//attempt to do something similar to line 63
-
+  //x1 +=dm;
+  //x2 -=dm;
   //x1= constrain(0,100+dm);
   //x2= constrain(0,100-dm);
   y1 = height/2 + Math.sin(x1)*amplitude;
   y2 = height/2 + Math.sin(x2)*amplitude;
-  m = ((y1-y2)/(dm))*amplitude;
+  m = ((y1-y2)/(dm*2))*amplitude;
 
-  var x = -(dx/2)*points;
+  var x = 0/*-(dx/2)*points*/;
   for(var i = 0; i < mValues.length; i++ ){
-    mValues[i] = (m*x );
+   mValues[i] = ( m*x/2 );
     x += dx;
   }
 
@@ -126,19 +127,20 @@ function renderSlope(){
   push();
   rectMode(CENTER);
   noStroke();
-  fill(200,20,200,50);
-  ellipse(x1,y1,5,5); //for figuring out if its actually working like its supposed to
-  ellipse(x2,y2,5,5)
+  fill(200,20,200);
+  ellipse(x1*xSpacing,y1,15,15); //for figuring out if its actually working like its supposed to
+  ellipse(x2*xSpacing,y2,15,15)
   pop();
   push();
+  stroke(100,0,150,200);
   noFill();
   //r= mouseX;
   //r = map(mouseX,0,width, 0,dx*yValues.length);
   //var w = Math.sin(r)*amplitude ;
-  //translate(0,height/2 + w);
+  translate(mouseX,height/2);
   beginShape();
-  for(var x = 0; x <yValues.length; x +=1){
-    curveVertex(x*xSpacing,height/2 +mValues[x]);
+  for(var x = 0; x < 100; x ++){
+    curveVertex(x*xSpacing, mValues[x]);
   }
   endShape();
   pop();
