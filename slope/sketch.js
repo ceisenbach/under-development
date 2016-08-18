@@ -10,7 +10,9 @@ var mValues; //array to calculate the slope values
 var dm;  //delta for slope;
 var dmSlider; //delta x (for slope) slider;
 var m;  //slope
+var lineValues; // to draw the tangent line;
 
+var loc; //our location
 //var grid;
 
 //use constrain function!!!!
@@ -27,7 +29,7 @@ function setup(){
   dx = xSpacing/points;
   mValues = new Array(floor(w/xSpacing));
   yValues = new Array(floor(w/xSpacing));
-
+  lineValues = new Array(floor((w/xSpacing)));
 }
 
 
@@ -54,17 +56,20 @@ renderWave();
 
 calcSlope();
 renderSlope();
-push();
+//push();
 stroke(0);
 strokeWeight(2);
 //line(x1,y1,x2,y2);
 noStroke();
-r = mouseX;
+//r = mouseX;
 r = map(mouseX,0,width, 0,dx*yValues.length);
 var w = Math.sin(r)*amplitude ;
 fill(200,100,0,100);
 ellipse (mouseX,height/2+w,15,15);
-pop();
+//loc = createVector(mouseX,height/2+w);
+//calcSlope(loc.x);
+//renderSlope();
+//pop();
 /*push();
 translate(mouseX,mouseY);
 stroke(0);
@@ -99,7 +104,7 @@ function renderWave(){
   endShape();
   pop();
 }
-function calcSlope(){
+/*function calcSlope(){
   //x1 = (mouseX+dm);
   //x2 = (mouseX-dm);
   x1 = map(mouseX+dm,0,width, 0,dx*yValues.length);//attempt to do something similar to line 63
@@ -112,7 +117,7 @@ function calcSlope(){
   y2 = height/2 + Math.sin(x2)*amplitude;
   m = ((y1-y2)/(dm*2))*amplitude;
 
-  var x = 0/*-(dx/2)*points*/;
+  var x = 0-(dx/2)*points;
   for(var i = 0; i < mValues.length; i++ ){
    mValues[i] = ( m*x/2 );
     x += dx;
@@ -120,6 +125,15 @@ function calcSlope(){
 
   /*var x = 0;
   for(int i = 0; i < mValues.length; )*/
+  function calcSlope(){
+   var x = 0;
+   var q = map(mouseX,0,width, 0,dx*yValues.length);
+   for (var i = 0; i < mValues.length; i++) {
+     m = Math.cos(q) * amplitude; //the derivative of our sin wave.
+     mValues[i] = m * x;
+     x += dx;
+    // lineValues[i] = mValues[i] * x; // calculating the tangent line.
+   }
 }
 function renderSlope(){
   //noStroke();
@@ -137,10 +151,10 @@ function renderSlope(){
   //r= mouseX;
   //r = map(mouseX,0,width, 0,dx*yValues.length);
   //var w = Math.sin(r)*amplitude ;
-  translate(mouseX,height/2);
+  translate(mouseX,height/1.5);
   beginShape();
-  for(var x = 0; x < 100; x ++){
-    curveVertex(x*xSpacing, mValues[x]);
+  for(var x = 0; x < mValues.length; x ++){
+    curveVertex(x*xSpacing,mValues[x]);
   }
   endShape();
   pop();
