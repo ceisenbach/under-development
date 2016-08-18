@@ -11,7 +11,7 @@
 * A random function generator that changes the function each time the sim is loaded.
 
 #####Needs to be done:
-* Fix the slope line so it's mathematically **accurate!!!**.
+* ~~Fix the slope line so it's mathematically accurate!!!.~~
 * Fix the slope line so its smaller and follows the circle on the function. Instead of staying in middle of the page.
 * Better modulation of the sim so that it can be adapted into other sims more effectively and will work with any arbitrary function given.
 * Cleaner code, less inefficiencies, readability.
