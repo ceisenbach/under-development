@@ -11,7 +11,7 @@
 * A random function generator that changes the function each time the sim is loaded.
 
 ##### Needs to be done:
-* ~~Fix the slope line so it's mathematically accurate!!!.~~
+* ~~Fix the slope line so it's mathematically accurate.~~
 * Fix the slope line so its smaller and follows the circle on the function. Instead of staying in middle of the page.
 * Better modulation of the sim so that it can be adapted into other sims more effectively and will work with any arbitrary function given.
 * Cleaner code, less inefficiencies, readability.
@@ -34,20 +34,20 @@
 * A sim that allows the user to change the angular acceleration.
 * Any ideas for what it can be used for are _welcome_.
 
-###Rise-O-Run:
+### Rise-O-Run:
 * A sim that allows the user to create a linear function.
 
-###Energy:
+### Energy:
 [check it out](https://ceisenbach.github.io/under-development/energy/).
 * A sim using the [box2d phyics engine - js port](https://github.com/kripken/box2d.js/).
 * It's meant as an illustration of stable and unstaple equilibrium on an energy graph
 * As you can most probably see that it has a lot of potential for expansion into other phyics concepts.
 
-#####Goals:
+##### Goals:
  * incorporate tilt-event ```rotationX``` 
  * cooler looking -\'_'/-
 
-###Circle - Radians:
+### Circle - Radians:
  * Based on one of the gifs posted [here](https://en.wikipedia.org/wiki/User:LucasVB/Gallery)
  * in progress.
 
